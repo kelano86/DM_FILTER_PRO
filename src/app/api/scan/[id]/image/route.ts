@@ -39,32 +39,6 @@ export async function POST(
             position: 'relative',
           }}
         >
-          {/* Decorative elements */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '40px',
-              right: '40px',
-              width: '120px',
-              height: '120px',
-              borderRadius: '50%',
-              background: 'linear-gradient(45deg, #fbbf24, #f59e0b)',
-              opacity: 0.1,
-            }}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '40px',
-              left: '40px',
-              width: '80px',
-              height: '80px',
-              borderRadius: '50%',
-              background: 'linear-gradient(45deg, #8b5cf6, #7c3aed)',
-              opacity: 0.15,
-            }}
-          />
-
           {/* Main headline with enhanced typography */}
           <div
             style={{
@@ -73,10 +47,7 @@ export async function POST(
               textAlign: 'center',
               marginBottom: '24px',
               lineHeight: '0.95',
-              background: 'linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%)',
-              backgroundClip: 'text',
-              color: 'transparent',
-              textShadow: '0 4px 8px rgba(0,0,0,0.3)',
+              color: 'white',
             }}
           >
             You fumbled {mockScanData.missedDeals} deals
@@ -87,12 +58,9 @@ export async function POST(
             style={{
               fontSize: '52px',
               fontWeight: '700',
-              background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
-              backgroundClip: 'text',
-              color: 'transparent',
+              color: '#fbbf24',
               textAlign: 'center',
               marginBottom: '80px',
-              textShadow: '0 0 20px rgba(251, 191, 36, 0.5)',
             }}
           >
             worth ${mockScanData.missedValue.toLocaleString()}
@@ -111,7 +79,6 @@ export async function POST(
               backgroundColor: 'rgba(255, 255, 255, 0.05)',
               borderRadius: '20px',
               border: '1px solid rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -155,7 +122,6 @@ export async function POST(
                 fontSize: '24px',
                 color: '#0f0f23',
                 fontWeight: '900',
-                boxShadow: '0 4px 12px rgba(251, 191, 36, 0.3)',
               }}
             >
               DM
@@ -167,28 +133,17 @@ export async function POST(
       {
         width: 1080,
         height: 1080,
-        fonts: [
-          {
-            name: 'Inter',
-            data: await fetch('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap').then(res => res.arrayBuffer()),
-            style: 'normal',
-          },
-        ],
       }
     );
 
-    // Convert ImageResponse to buffer for potential Cloudinary upload
-    const imageBuffer = await imageResponse.arrayBuffer();
-    
     // In a real implementation, we would upload this to Cloudinary
-    // For now, we'll return a mock URL with the actual image data
+    // For now, we'll return a mock URL
     const mockImageUrl = `https://res.cloudinary.com/demo/image/upload/v1/dm-audit-${id}.png`;
 
     return NextResponse.json({
       imageUrl: mockImageUrl,
       scanId: id,
-      generatedAt: new Date().toISOString(),
-      imageSize: imageBuffer.byteLength
+      generatedAt: new Date().toISOString()
     });
 
   } catch (error) {
