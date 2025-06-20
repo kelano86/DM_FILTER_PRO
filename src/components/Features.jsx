@@ -55,7 +55,12 @@ const Features = () => {
 
   return (
     <section id="features" style={{ background: 'white' }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div className="section-header">
           <h2>Powerful Features for Modern Influencers</h2>
           <p>

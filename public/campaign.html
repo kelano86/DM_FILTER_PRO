@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DM Deal Audit - DM Filter Pro</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: white;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      
+      .back-link {
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        display: inline-block;
+      }
+      
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        margin-bottom: 60px;
+        opacity: 0.9;
+      }
+      
+      .audit-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+      
+      .slider-container {
+        margin: 30px 0;
+      }
+      
+      .slider-label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      
+      .slider {
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        outline: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #8b5cf6;
+        cursor: pointer;
+      }
+      
+      .slider-range {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-size: 14px;
+        opacity: 0.7;
+      }
+      
+      .btn {
+        background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: transform 0.2s;
+      }
+      
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      
+      .btn:disabled {
+        background: rgba(139, 92, 246, 0.5);
+        cursor: not-allowed;
+        transform: none;
+      }
+      
+      .results-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+      
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      
+      .result-item {
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      
+      .result-value {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .result-label {
+        opacity: 0.8;
+      }
+      
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .stat-label {
+        opacity: 0.7;
+        font-size: 14px;
+      }
+      
+      .share-btn {
+        background: linear-gradient(45deg, #f59e0b, #d97706);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="/" class="back-link">← DM Filter Pro</a>
+      
+      <h1>DM Deal Audit</h1>
+      <p class="subtitle">Discover how many potential deals you've been missing in your Twitter DMs</p>
+      
+      <div class="audit-card">
+        <h3 style="font-size: 24px; margin-bottom: 20px;">Configure Your Audit</h3>
+        <p style="margin-bottom: 30px; opacity: 0.8;">Set your average deal value to calculate missed opportunities</p>
+        
+        <div class="slider-container">
+          <label class="slider-label">Average Deal Value: $<span id="dealValue">100</span></label>
+          <input type="range" min="0" max="10000" value="100" class="slider" id="dealSlider">
+          <div class="slider-range">
+            <span>$0</span>
+            <span>$10,000</span>
+          </div>
+        </div>
+        
+        <button class="btn" id="runScanBtn">🔍 Run DM Audit</button>
+      </div>
+      
+      <div class="results-card hidden" id="resultsCard">
+        <h3 style="font-size: 24px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+          📊 Audit Results
+        </h3>
+        
+        <div class="results-grid">
+          <div class="result-item" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.3);">
+            <div class="result-value" id="missedDeals">0</div>
+            <div class="result-label">Missed Deals</div>
+          </div>
+          <div class="result-item" style="background: rgba(251, 191, 36, 0.2); border-color: rgba(251, 191, 36, 0.3);">
+            <div class="result-value" id="missedValue">$0</div>
+            <div class="result-label">Missed Value</div>
+          </div>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value" style="color: #60a5fa;" id="mutualFollowers">0</div>
+            <div class="stat-label">Mutual Followers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" style="color: #a78bfa;" id="ethosScore">0</div>
+            <div class="stat-label">Ethos Score</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" style="color: #34d399;" id="yaps">0</div>
+            <div class="stat-label">Yaps</div>
+          </div>
+        </div>
+        
+        <button class="share-btn" id="shareBtn">🐦 Share on Twitter</button>
+      </div>
+    </div>
+    
+    <script>
+      const dealSlider = document.getElementById('dealSlider');
+      const dealValue = document.getElementById('dealValue');
+      const runScanBtn = document.getElementById('runScanBtn');
+      const resultsCard = document.getElementById('resultsCard');
+      const shareBtn = document.getElementById('shareBtn');
+      
+      let scanResults = null;
+      
+      // Update deal value display
+      dealSlider.addEventListener('input', (e) => {
+        dealValue.textContent = e.target.value;
+      });
+      
+      // Run scan
+      runScanBtn.addEventListener('click', async () => {
+        runScanBtn.disabled = true;
+        runScanBtn.textContent = '🔍 Scanning...';
+        
+        try {
+          // Simulate API call with realistic data
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          
+          const avgValue = parseInt(dealSlider.value);
+          const totalDMs = Math.floor(Math.random() * 300) + 100;
+          const qualificationRate = 0.1 + Math.random() * 0.3;
+          const missedDeals = Math.floor(totalDMs * qualificationRate);
+          const missedValue = missedDeals * avgValue;
+          
+          scanResults = {
+            missedDeals,
+            missedValue,
+            totalDMs,
+            mutualFollowers: Math.floor(Math.random() * 500) + 50,
+            ethosScore: Math.floor(Math.random() * 2000) + 500,
+            yaps: Math.floor(Math.random() * 200) + 20,
+            avgValue
+          };
+          
+          // Update results display
+          document.getElementById('missedDeals').textContent = scanResults.missedDeals;
+          document.getElementById('missedValue').textContent = '$' + scanResults.missedValue.toLocaleString();
+          document.getElementById('mutualFollowers').textContent = scanResults.mutualFollowers;
+          document.getElementById('ethosScore').textContent = scanResults.ethosScore;
+          document.getElementById('yaps').textContent = scanResults.yaps;
+          
+          resultsCard.classList.remove('hidden');
+          
+        } catch (error) {
+          console.error('Scan failed:', error);
+        }
+        
+        runScanBtn.disabled = false;
+        runScanBtn.textContent = '🔍 Run DM Audit';
+      });
+      
+      // Share on Twitter
+      shareBtn.addEventListener('click', () => {
+        if (scanResults) {
+          const text = `I just discovered I missed ${scanResults.missedDeals} potential deals worth $${scanResults.missedValue.toLocaleString()}! 😱 Check what you're missing with @DMFilterPro`;
+          const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+          window.open(url, '_blank');
+        }
+      });
+    </script>
+  </body>
+</html>
+

@@ -10,14 +10,14 @@ const HowItWorks = () => {
     },
     {
       number: '2',
-      title: 'Connect Telegram',
-      description: 'Add your Telegram bot token and chat ID. Configure your personal links (Calendly, email, website).',
-      icon: '🔗'
+      title: 'One-Click Telegram Setup',
+      description: 'Click our Telegram link → Chat opens → Send /start → Automatic setup complete! No manual Chat ID copying.',
+      icon: '🚀'
     },
     {
       number: '3',
-      title: 'Set Preferences',
-      description: 'Adjust filtering thresholds, add keywords, and customize notification templates.',
+      title: 'Configure Preferences',
+      description: 'Set filtering thresholds, add keywords, and configure your personal links (Calendly, email, website).',
       icon: '⚙️'
     },
     {
@@ -38,7 +38,12 @@ const HowItWorks = () => {
     <section id="how-it-works" style={{
       background: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)'
     }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div className="section-header">
           <h2>How It Works</h2>
           <p>
@@ -124,22 +129,22 @@ const HowItWorks = () => {
             margin: '0 auto'
           }}>
             <h3 style={{ marginBottom: '16px', color: '#2d3748' }}>
-              ⏱️ Setup Time: Under 5 Minutes
+              ⏱️ Setup Time: Under 3 Minutes
             </h3>
             <p style={{ 
               marginBottom: '24px',
               color: '#4a5568',
               fontSize: '1.1rem'
             }}>
-              Most users are up and running in under 5 minutes. Our streamlined setup 
-              process gets you filtering important DMs immediately.
+              With our new one-click Telegram setup, most users are filtering DMs in under 3 minutes. 
+              No manual Chat ID copying - everything is automated!
             </p>
             <a 
               href="#download" 
               className="btn btn-primary btn-large"
               style={{ textDecoration: 'none' }}
             >
-              Start Your 5-Minute Setup
+              Start Your 3-Minute Setup
             </a>
           </div>
         </div>

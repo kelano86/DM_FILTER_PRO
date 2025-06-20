@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -7,7 +8,12 @@ const Footer = () => {
       color: 'white',
       padding: '60px 0 30px 0'
     }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: window.innerWidth > 768 ? 'repeat(4, 1fr)' : '1fr',
@@ -114,13 +120,13 @@ const Footer = () => {
                 </a>
               </li>
               <li style={{ marginBottom: '12px' }}>
-                <a href="#download" style={{
+                <Link to="/campaign" style={{
                   color: '#a0aec0',
                   textDecoration: 'none',
                   transition: 'color 0.3s ease'
                 }}>
-                  Download
-                </a>
+                  DM Audit
+                </Link>
               </li>
               <li style={{ marginBottom: '12px' }}>
                 <a href="#" style={{
@@ -200,40 +206,40 @@ const Footer = () => {
               padding: 0
             }}>
               <li style={{ marginBottom: '12px' }}>
-                <a href="#" style={{
+                <Link to="/privacy" style={{
                   color: '#a0aec0',
                   textDecoration: 'none',
                   transition: 'color 0.3s ease'
                 }}>
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: '12px' }}>
-                <a href="#" style={{
+                <Link to="/terms" style={{
                   color: '#a0aec0',
                   textDecoration: 'none',
                   transition: 'color 0.3s ease'
                 }}>
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: '12px' }}>
-                <a href="#" style={{
+                <Link to="/cookies" style={{
                   color: '#a0aec0',
                   textDecoration: 'none',
                   transition: 'color 0.3s ease'
                 }}>
                   Cookie Policy
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: '12px' }}>
-                <a href="#" style={{
+                <Link to="/gdpr" style={{
                   color: '#a0aec0',
                   textDecoration: 'none',
                   transition: 'color 0.3s ease'
                 }}>
                   GDPR
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

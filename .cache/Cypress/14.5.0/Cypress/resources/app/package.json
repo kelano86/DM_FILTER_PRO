@@ -1,0 +1,10 @@
+{
+  "name": "cypress",
+  "productName": "Cypress",
+  "description": "Cypress is a next generation front end testing tool built for the modern web",
+  "version": "14.5.0",
+  "electronVersion": "33.2.1",
+  "electronNodeVersion": "20.18.1",
+  "main": "index.js",
+  "env": "production"
+}
