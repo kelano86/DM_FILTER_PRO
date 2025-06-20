@@ -1,0 +1,4 @@
+owner: cypress-io
+repo: cypress
+provider: github
+updaterCacheDirName: cypress-updater
