@@ -3,7 +3,12 @@ import React from 'react'
 const Pricing = () => {
   return (
     <section id="pricing" style={{ background: 'white' }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div className="section-header">
           <h2>Simple, Transparent Pricing</h2>
           <p>
@@ -13,9 +18,9 @@ const Pricing = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: window.innerWidth > 768 ? 'repeat(3, 1fr)' : '1fr',
+          gridTemplateColumns: window.innerWidth > 768 ? 'repeat(2, 1fr)' : '1fr',
           gap: '30px',
-          maxWidth: '1000px',
+          maxWidth: '800px',
           margin: '0 auto'
         }}>
           {/* Free Plan */}
@@ -129,15 +134,16 @@ const Pricing = () => {
             position: 'relative',
             textAlign: 'center',
             border: '2px solid #667eea',
-            transform: 'scale(1.05)'
+            transform: 'scale(1.05)',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
           }}>
             <div style={{
               position: 'absolute',
               top: '-12px',
               left: '50%',
               transform: 'translateX(-50%)',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              color: 'white',
+              background: 'white',
+              color: '#667eea',
               padding: '8px 24px',
               borderRadius: '20px',
               fontSize: '0.9rem',
@@ -147,7 +153,7 @@ const Pricing = () => {
             </div>
 
             <div style={{
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'rgba(255, 255, 255, 0.2)',
               color: 'white',
               padding: '8px 16px',
               borderRadius: '20px',
@@ -190,7 +196,7 @@ const Pricing = () => {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
+                <span style={{ color: '#90EE90' }}>✓</span>
                 Everything in Free
               </li>
               <li style={{ 
@@ -200,7 +206,7 @@ const Pricing = () => {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
+                <span style={{ color: '#90EE90' }}>✓</span>
                 Advanced analytics dashboard
               </li>
               <li style={{ 
@@ -210,7 +216,7 @@ const Pricing = () => {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
+                <span style={{ color: '#90EE90' }}>✓</span>
                 Custom filtering rules
               </li>
               <li style={{ 
@@ -220,7 +226,7 @@ const Pricing = () => {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
+                <span style={{ color: '#90EE90' }}>✓</span>
                 Team collaboration
               </li>
               <li style={{ 
@@ -230,7 +236,7 @@ const Pricing = () => {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
+                <span style={{ color: '#90EE90' }}>✓</span>
                 Priority support
               </li>
             </ul>
@@ -248,112 +254,6 @@ const Pricing = () => {
               }}
             >
               Start Pro Trial
-            </a>
-          </div>
-
-          {/* Enterprise Plan */}
-          <div className="card" style={{
-            position: 'relative',
-            textAlign: 'center'
-          }}>
-            <div style={{
-              background: '#f7fafc',
-              color: '#4a5568',
-              padding: '8px 16px',
-              borderRadius: '20px',
-              fontSize: '0.9rem',
-              fontWeight: '600',
-              marginBottom: '20px',
-              display: 'inline-block'
-            }}>
-              ENTERPRISE
-            </div>
-            
-            <h3 style={{ marginBottom: '8px' }}>Enterprise</h3>
-            <div style={{
-              fontSize: '3rem',
-              fontWeight: '700',
-              color: '#2d3748',
-              marginBottom: '8px'
-            }}>
-              Custom
-            </div>
-            <p style={{ 
-              color: '#718096',
-              marginBottom: '30px',
-              fontSize: '1rem'
-            }}>
-              For agencies & teams
-            </p>
-
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              marginBottom: '30px',
-              textAlign: 'left'
-            }}>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                Everything in Pro
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                White-label solution
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                API access
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                Custom integrations
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                Dedicated support
-              </li>
-            </ul>
-
-            <a 
-              href="mailto:hello@dmfilterpro.com" 
-              className="btn btn-secondary"
-              style={{ 
-                textDecoration: 'none',
-                width: '100%',
-                justifyContent: 'center'
-              }}
-            >
-              Contact Sales
             </a>
           </div>
         </div>

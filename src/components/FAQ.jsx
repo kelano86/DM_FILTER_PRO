@@ -30,7 +30,7 @@ const FAQ = () => {
     },
     {
       question: "How do I set up Telegram notifications?",
-      answer: "Create a Telegram bot using @BotFather, get your bot token, and add it to the extension settings along with your chat ID. The setup takes about 2 minutes and we provide step-by-step instructions in the extension."
+      answer: "Super easy! Just click our 'Start Telegram Setup' button, which opens our bot chat. Send /start and your setup is automatically complete - no manual Chat ID copying needed! The bot will confirm your connection and you'll start receiving smart DM notifications immediately."
     },
     {
       question: "Does this work on mobile?",
@@ -50,7 +50,12 @@ const FAQ = () => {
     <section id="faq" style={{
       background: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)'
     }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div className="section-header">
           <h2>Frequently Asked Questions</h2>
           <p>

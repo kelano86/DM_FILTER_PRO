@@ -7,7 +7,12 @@ const Footer = () => {
       color: 'white',
       padding: '60px 0 30px 0'
     }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: window.innerWidth > 768 ? 'repeat(4, 1fr)' : '1fr',

@@ -10,7 +10,12 @@ const Hero = () => {
       display: 'flex',
       alignItems: 'center'
     }}>
-      <div className="container">
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
+        width: '100%'
+      }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
@@ -44,9 +49,41 @@ const Hero = () => {
               <a href="#download" className="btn btn-primary btn-large" style={{ textDecoration: 'none' }}>
                 🚀 Install Free Extension
               </a>
-              <a href="#demo" className="btn btn-secondary btn-large" style={{ textDecoration: 'none' }}>
-                📱 See Demo
+              <a 
+                href="https://t.me/DMFilterProBot?start=website" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-secondary btn-large" 
+                style={{ textDecoration: 'none' }}
+              >
+                📱 Start Telegram Setup
               </a>
+            </div>
+
+            <div style={{
+              background: 'rgba(102, 126, 234, 0.1)',
+              border: '1px solid rgba(102, 126, 234, 0.2)',
+              borderRadius: '12px',
+              padding: '16px',
+              marginBottom: '32px'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '8px'
+              }}>
+                <span style={{ fontSize: '1.2rem' }}>🚀</span>
+                <strong style={{ color: '#667eea' }}>New: One-Click Setup!</strong>
+              </div>
+              <p style={{
+                margin: 0,
+                color: '#4a5568',
+                fontSize: '0.95rem'
+              }}>
+                Click "Start Telegram Setup" → Send /start → Automatic configuration complete! 
+                No manual Chat ID copying required.
+              </p>
             </div>
 
             <div style={{
