@@ -13,7 +13,7 @@ const Pricing = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: window.innerWidth > 768 ? 'repeat(3, 1fr)' : '1fr',
+          gridTemplateColumns: window.innerWidth > 768 ? 'repeat(2, 1fr)' : '1fr',
           gap: '30px',
           maxWidth: '1000px',
           margin: '0 auto'
@@ -160,17 +160,17 @@ const Pricing = () => {
               PRO
             </div>
             
-            <h3 style={{ marginBottom: '8px', color: 'white' }}>Pro</h3>
+            <h3 style={{ marginBottom: '8px', color: '#2d3748' }}>Pro</h3>
             <div style={{
               fontSize: '3rem',
               fontWeight: '700',
-              color: 'white',
+              color: '#2d3748',
               marginBottom: '8px'
             }}>
               $9
             </div>
             <p style={{ 
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: '#718096',
               marginBottom: '30px',
               fontSize: '1rem'
             }}>
@@ -185,7 +185,7 @@ const Pricing = () => {
             }}>
               <li style={{ 
                 padding: '8px 0',
-                color: 'white',
+                color: '#2d3748',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -195,7 +195,7 @@ const Pricing = () => {
               </li>
               <li style={{ 
                 padding: '8px 0',
-                color: 'white',
+                color: '#2d3748',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -205,7 +205,7 @@ const Pricing = () => {
               </li>
               <li style={{ 
                 padding: '8px 0',
-                color: 'white',
+                color: '#2d3748',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -215,7 +215,7 @@ const Pricing = () => {
               </li>
               <li style={{ 
                 padding: '8px 0',
-                color: 'white',
+                color: '#2d3748',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -225,7 +225,7 @@ const Pricing = () => {
               </li>
               <li style={{ 
                 padding: '8px 0',
-                color: 'white',
+                color: '#2d3748',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -237,115 +237,6 @@ const Pricing = () => {
 
             <a 
               href="#download" 
-              className="btn"
-              style={{ 
-                background: 'white',
-                color: '#667eea',
-                textDecoration: 'none',
-                width: '100%',
-                justifyContent: 'center',
-                fontWeight: '600'
-              }}
-            >
-              Start Pro Trial
-            </a>
-          </div>
-
-          {/* Enterprise Plan */}
-          <div className="card" style={{
-            position: 'relative',
-            textAlign: 'center'
-          }}>
-            <div style={{
-              background: '#f7fafc',
-              color: '#4a5568',
-              padding: '8px 16px',
-              borderRadius: '20px',
-              fontSize: '0.9rem',
-              fontWeight: '600',
-              marginBottom: '20px',
-              display: 'inline-block'
-            }}>
-              ENTERPRISE
-            </div>
-            
-            <h3 style={{ marginBottom: '8px' }}>Enterprise</h3>
-            <div style={{
-              fontSize: '3rem',
-              fontWeight: '700',
-              color: '#2d3748',
-              marginBottom: '8px'
-            }}>
-              Custom
-            </div>
-            <p style={{ 
-              color: '#718096',
-              marginBottom: '30px',
-              fontSize: '1rem'
-            }}>
-              For agencies & teams
-            </p>
-
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              marginBottom: '30px',
-              textAlign: 'left'
-            }}>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                Everything in Pro
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                White-label solution
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                API access
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                Custom integrations
-              </li>
-              <li style={{ 
-                padding: '8px 0',
-                color: '#4a5568',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: '#48bb78' }}>✓</span>
-                Dedicated support
-              </li>
-            </ul>
-
-            <a 
-              href="mailto:hello@dmfilterpro.com" 
               className="btn btn-secondary"
               style={{ 
                 textDecoration: 'none',
@@ -353,7 +244,7 @@ const Pricing = () => {
                 justifyContent: 'center'
               }}
             >
-              Contact Sales
+              Start Pro Trial
             </a>
           </div>
         </div>
