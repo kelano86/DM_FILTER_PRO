@@ -1,200 +1,133 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { TrendingUp, Users, Shield, Zap, ArrowRight, Star } from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Navigation */}
-      <nav className="container mx-auto px-4 py-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">DM</span>
-            </div>
-            <span className="text-white font-bold text-xl">Filter Pro</span>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <Link href="/campaign">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
-                Run DM Audit
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <Badge className="mb-6 bg-purple-600/20 text-purple-300 border-purple-500/30">
-          🚀 New Feature: DM Deal Audit
-        </Badge>
-        
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Stop Missing
-          <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-            {" "}Million Dollar{" "}
-          </span>
-          DMs
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      color: 'white',
+      textAlign: 'center'
+    }}>
+      <div style={{
+        background: 'rgba(255, 255, 255, 0.1)',
+        padding: '60px 40px',
+        borderRadius: '20px',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        maxWidth: '600px'
+      }}>
+        <h1 style={{
+          fontSize: '48px',
+          fontWeight: 'bold',
+          marginBottom: '20px',
+          background: 'linear-gradient(45deg, #fbbf24, #f59e0b)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text'
+        }}>
+          DM Filter Pro
         </h1>
         
-        <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+        <div style={{
+          background: 'linear-gradient(45deg, #10b981, #059669)',
+          padding: '12px 24px',
+          borderRadius: '25px',
+          display: 'inline-block',
+          marginBottom: '30px',
+          fontSize: '14px',
+          fontWeight: '600'
+        }}>
+          🚀 New Feature: DM Deal Audit
+        </div>
+
+        <h2 style={{
+          fontSize: '36px',
+          fontWeight: 'bold',
+          marginBottom: '20px',
+          lineHeight: '1.2'
+        }}>
+          Stop Missing Million Dollar DMs
+        </h2>
+
+        <p style={{
+          fontSize: '18px',
+          marginBottom: '40px',
+          opacity: 0.9,
+          lineHeight: '1.6'
+        }}>
           Discover how many potential deals you've been missing in your Twitter DMs. 
           Our AI-powered audit reveals the hidden opportunities in your message requests.
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link href="/campaign">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg">
-              <TrendingUp className="mr-2 h-5 w-5" />
-              Run Your DM Audit
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-          
-          <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg">
-            Watch Demo
-          </Button>
-        </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Why DM Filter Pro?
-          </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            The only tool that turns your Twitter DMs into a revenue-generating machine
+        <Link 
+          href="/campaign"
+          style={{
+            background: 'linear-gradient(45deg, #8b5cf6, #7c3aed)',
+            color: 'white',
+            padding: '16px 32px',
+            borderRadius: '12px',
+            textDecoration: 'none',
+            fontSize: '18px',
+            fontWeight: '600',
+            display: 'inline-block',
+            transition: 'transform 0.2s',
+            border: 'none',
+            cursor: 'pointer'
+          }}
+        >
+          🔍 Run Your DM Audit
+        </Link>
+      </div>
+
+      <div style={{
+        marginTop: '60px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '30px',
+        maxWidth: '900px',
+        width: '100%'
+      }}>
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.1)',
+          padding: '30px',
+          borderRadius: '15px',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
+        }}>
+          <h3 style={{ fontSize: '20px', marginBottom: '15px' }}>🎯 Deal Discovery</h3>
+          <p style={{ opacity: 0.8, lineHeight: '1.5' }}>
+            AI-powered analysis reveals hidden opportunities in your message requests
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all duration-300">
-            <CardHeader>
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-6 w-6 text-white" />
-              </div>
-              <CardTitle className="text-white">Deal Discovery</CardTitle>
-              <CardDescription className="text-slate-300">
-                AI-powered analysis reveals hidden opportunities in your message requests
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-slate-300">
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  Smart filtering algorithms
-                </li>
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  Opportunity scoring
-                </li>
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  Revenue calculation
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all duration-300">
-            <CardHeader>
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-white" />
-              </div>
-              <CardTitle className="text-white">Viral Sharing</CardTitle>
-              <CardDescription className="text-slate-300">
-                Generate shareable images that showcase your missed opportunities
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-slate-300">
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  1080x1080 social images
-                </li>
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  One-click X/Twitter sharing
-                </li>
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  Professional branding
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all duration-300">
-            <CardHeader>
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-white" />
-              </div>
-              <CardTitle className="text-white">Privacy First</CardTitle>
-              <CardDescription className="text-slate-300">
-                Your data stays secure with enterprise-grade privacy protection
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-slate-300">
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  End-to-end encryption
-                </li>
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  No data storage
-                </li>
-                <li className="flex items-center gap-2">
-                  <Star className="h-4 w-4 text-yellow-400" />
-                  GDPR compliant
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.1)',
+          padding: '30px',
+          borderRadius: '15px',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
+        }}>
+          <h3 style={{ fontSize: '20px', marginBottom: '15px' }}>📈 Viral Sharing</h3>
+          <p style={{ opacity: 0.8, lineHeight: '1.5' }}>
+            Generate shareable images that showcase your missed opportunities
+          </p>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
-        <Card className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-lg border-purple-500/30">
-          <CardContent className="p-12 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Discover Your Missed Opportunities?
-            </h3>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of creators and entrepreneurs who've uncovered hidden revenue in their DMs
-            </p>
-            
-            <Link href="/campaign">
-              <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-bold px-12 py-4 text-lg">
-                <Zap className="mr-2 h-5 w-5" />
-                Start Your Free Audit
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Footer */}
-      <footer className="container mx-auto px-4 py-12 border-t border-white/10">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold">DM</span>
-            </div>
-            <span className="text-white font-bold">Filter Pro</span>
-          </div>
-          
-          <div className="text-slate-400 text-sm">
-            © 2025 DM Filter Pro. All rights reserved.
-          </div>
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.1)',
+          padding: '30px',
+          borderRadius: '15px',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
+        }}>
+          <h3 style={{ fontSize: '20px', marginBottom: '15px' }}>🔒 Privacy First</h3>
+          <p style={{ opacity: 0.8, lineHeight: '1.5' }}>
+            Your data stays secure with enterprise-grade privacy protection
+          </p>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
